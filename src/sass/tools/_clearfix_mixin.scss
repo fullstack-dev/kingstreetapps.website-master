@@ -1,0 +1,16 @@
+/**
+ * mixin for clearfix helper
+ */
+@mixin clearfix {
+  zoom: 1; /* For IE 6/7 (trigger hasLayout) */
+
+  &:before,
+  &:after {
+    content: "";
+    display: table;
+  }
+
+  &:after {
+    clear: both;
+  }
+}

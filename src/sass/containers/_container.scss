@@ -1,0 +1,30 @@
+$page-transition-duration: .35s;
+$page-transition-start-top: rem(50);
+
+@mixin page-transition-start() {
+  transition: top $page-transition-duration ease-out;
+  position: relative;
+  top: $page-transition-start-top;
+}
+
+@mixin page-transition-end() {
+  top: 0;
+}
+
+.page-header {
+  &__content {
+    @include page-transition-start();
+
+    &--done-enter {
+      @include page-transition-end();
+    }
+  }
+}
+
+.page-content {
+  @include page-transition-start();
+
+  &--done-enter {
+    @include page-transition-end();
+  }
+}

@@ -1,0 +1,27 @@
+.location-info-group {
+  display: inline-block;
+  position: relative;
+  padding-left: rem(106);
+  min-height: rem(80);
+
+  &__timer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: rem(80) !important;
+    height: rem(80) !important;
+  }
+
+  &__primary {
+    display: block;
+    @include sans-serif-bold;
+    line-height: em(27, 16);
+    padding-top: rem(12);
+  }
+
+  &__secondary {
+    display: block;
+    @include sans-serif-normal;
+    line-height: em(25, 16);
+  }
+}

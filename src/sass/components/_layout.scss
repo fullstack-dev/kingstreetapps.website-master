@@ -1,0 +1,11 @@
+.grid {
+  @include container;
+
+  &__row {
+    @include row;
+  }
+
+  &__col {
+    @include column;
+  }
+}

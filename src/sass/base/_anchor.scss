@@ -1,0 +1,13 @@
+%anchor {
+  text-decoration: none;
+
+  &:hover,
+  &:focus {
+    text-decoration: underline;
+    outline: 0;
+  }
+}
+
+a {
+  @extend %anchor;
+}

@@ -1,0 +1,26 @@
+.clock {
+  .react-clock {
+    &__face {
+      border: 2px solid $white;
+    }
+
+    &__mark {
+      top: 2px;
+      bottom: 2px;
+
+      &__body {
+        background-color: $white;
+      }
+    }
+
+    &__hand__body {
+      background-color: $white;
+    }
+
+    &__second-hand {
+      &__body {
+        background-color: $bittersweet;
+      }
+    }
+  }
+}

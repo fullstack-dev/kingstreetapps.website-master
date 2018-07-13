@@ -1,0 +1,22 @@
+.header {
+  position: relative;
+  background: transparent center no-repeat;
+  background-size: cover;
+  padding-top: rem(90);
+
+  &__nav {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+  }
+
+  &--dark {
+    background-color: $mine-shaft;
+  }
+
+  &--no-top-spacing {
+    padding-top: 0;
+  }
+}

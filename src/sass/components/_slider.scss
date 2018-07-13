@@ -1,0 +1,85 @@
+.slider {
+  $dotSize: 8;
+  $dotItemSize: 15;
+  $arrowIconSize: 16;
+
+  &__prev-arrow,
+  &__next-arrow {
+    position: absolute;
+    top: 50%;
+    color: $white;
+    font-size: rem($arrowIconSize);
+    transform: translate(0, -50%);
+    cursor: pointer;
+    z-index: 1;
+  }
+
+  &__prev-arrow {
+    left: rem(30);
+    transform: translate(0, -50%) rotate(180deg);
+  }
+
+  &__next-arrow {
+    right: rem(30);
+  }
+
+  .slick-prev,
+  .slick-next {
+    position: static;
+    transform: none;
+    width: 0;
+    height: 0;
+
+    &:before {
+      display: none;
+    }
+  }
+
+  .slick-dots {
+    bottom: rem(-40);
+
+    li {
+      width: rem($dotItemSize);
+      height: rem($dotItemSize);
+      margin: 0 rem(2.5);
+
+      button {
+        width: rem($dotItemSize);
+        height: rem($dotItemSize);
+        padding: 0;
+
+        &:before {
+          font-size: rem($dotSize);
+          width: rem($dotItemSize);
+          height: rem($dotItemSize);
+          line-height: rem($dotItemSize);
+        }
+      }
+    }
+  }
+}
+
+.slider--project {
+  &__prev-arrow,
+  &__next-arrow {
+    top: initial;
+    bottom: 0;
+    margin-bottom: 33.33%;
+    transform: translate(0, 50%);
+  }
+
+  &__prev-arrow {
+    transform: translate(0, 50%) rotate(180deg);
+  }
+}
+
+.slider--project-image {
+  &__prev-arrow,
+  &__next-arrow {
+    color: $heading-colour;
+  }
+
+  .slick-dots {
+    bottom: rem(32);
+  }
+}

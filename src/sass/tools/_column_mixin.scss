@@ -1,0 +1,35 @@
+@mixin column {
+  flex-basis: 0;
+  flex-grow: 1;
+  padding: 0 ($gutter/2);
+
+  @each $sizeKey, $value in $sizes {
+    &--xs-#{$sizeKey} {
+      flex: 0 0 #{$value};
+      max-width: #{$value};
+    }
+  }
+
+  @each $breakpointKey, $value in $breakpoints {
+    @include respond-to($breakpointKey) {
+      @each $sizeKey, $value in $sizes {
+        &--#{$breakpointKey}-#{$sizeKey} {
+          flex: 0 0 #{$value};
+          max-width: #{$value};
+        }
+      }
+
+      &--align-self-start {
+        align-self: flex-start;
+      }
+
+      &--align-self-end {
+        align-self: flex-end;
+      }
+
+      &--align-self-center {
+        align-self: center;
+      }
+    }
+  }
+}

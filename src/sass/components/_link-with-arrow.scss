@@ -1,0 +1,15 @@
+.link-with-arrow {
+  display: inline-flex;
+  align-items: center;
+  @include body-type(small);
+  font-weight: $font-weight-bold;
+  line-height: 2.6875em;
+  color: $heading-colour;
+
+  &__icon {
+    color: $primary-colour;
+    font-size: rem(12);
+    margin-left: rem(20);
+    margin-bottom: rem(2);
+  }
+}

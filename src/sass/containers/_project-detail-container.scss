@@ -1,0 +1,157 @@
+@mixin reveal-project-detail-helpers {
+  %label {
+    display: block;
+    @extend %body-type-xsmall;
+    font-weight: $font-weight-bold;
+    margin-bottom: rem(3);
+  }
+
+  %col-with-bottom-space {
+    margin-bottom: rem(23);
+  }
+}
+
+.project-detail-header {
+  @include reveal-project-detail-helpers;
+
+  &__content {
+    position: relative;
+    text-align: center;
+    padding: rem(150) 0 rem(40);
+
+    @include respond-to(lg) {
+      height: rem(600);
+      display: flex;
+      align-items: center;
+      text-align: left;
+      padding-top: 0;
+    }
+  }
+
+  &__project-label {
+    @extend %label;
+    color: $regent-gray;
+  }
+
+  &__project-title {
+    font-weight: $font-weight-bold;
+    letter-spacing: .5px;
+  }
+
+  &__image-wrapper {
+    margin-top: rem(40);
+
+    img {
+      width: 100%;
+      height: auto;
+    }
+
+    @include respond-to(lg) {
+      width: rem(570);
+      position: absolute;
+      right: 0;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+
+    @include respond-to(xl) {
+      width: rem(750);
+      right: rem(-60);
+    }
+  }
+}
+
+.project-detail-page-content {
+  @extend .page-content;
+
+  &--done-enter {
+    @extend .page-content--done-enter;
+  }
+}
+
+.project-detail-section-project-content {
+  @include reveal-project-detail-helpers;
+
+  &__inner {
+    padding: rem(74) 0 rem(42);
+    border-bottom: 1px solid $light-gray;
+  }
+
+  &__intro-container {
+    padding-bottom: rem(30);
+    border-bottom: 1px solid $light-gray;
+  }
+
+  &__intro-title,
+  &__intro-field,
+  &__project-link-wrapper,
+  &__meta-field {
+    @extend %col-with-bottom-space;
+  }
+
+  &__intro-title-label,
+  &__intro-field-label,
+  &__meta-field-label {
+    @extend %label;
+  }
+
+  &__intro-fields {
+    @include respond-to(lg) {
+      margin-left: rem(94);
+      width: 100%;
+    }
+  }
+
+  &__intro-field-value {
+    display: block;
+    line-height: em(30, 16);
+    color: $heading-colour;
+  }
+
+  &__description-container {
+    margin-top: rem(54);
+  }
+
+  &__description-col {
+    @include respond-to(lg) {
+      padding-right: rem(70);
+    }
+  }
+
+  &__slider-container {
+    margin-top: rem(50);
+  }
+
+  &__meta-container {
+    margin-top: rem(53);
+  }
+
+  &__project-link {
+    font-weight: $font-weight-bold;
+    color: $primary-colour;
+  }
+
+  &__meta-field-value {
+    display: block;
+    @include heading-type-scale(h3);
+    color: $heading-colour;
+  }
+}
+
+.project-detail-section-project-navigation {
+  @include reveal-project-detail-helpers;
+  padding: rem(53) 0;
+
+  &__link-container {
+    @extend %col-with-bottom-space;
+  }
+
+  &__link-label {
+    @extend %label;
+  }
+
+  &__link {
+    @include heading-type-scale(h3);
+    color: $heading-colour;
+  }
+}

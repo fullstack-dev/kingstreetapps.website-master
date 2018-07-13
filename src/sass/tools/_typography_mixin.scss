@@ -1,0 +1,68 @@
+/**
+ * mixin for body text
+ * @type string   $scale    [small, medium, large]
+ */
+@mixin body-type($scale) {
+  @include sans-serif-normal;
+  @include body-type-scale($scale);
+}
+
+/**
+ * mixin for heading text
+ * @type string   $scale    [h1, h2, h3, h4, h5, h6]
+ */
+@mixin heading-type($scale) {
+  @include sans-serif-normal;
+  @include heading-type-scale($scale);
+}
+
+
+@mixin body-type-scale($scale, $map: $body-type-scale) {
+  @include type-scale($scale, $map);
+}
+
+@mixin heading-type-scale($scale, $map: $heading-type-scale) {
+  @include type-scale($scale, $map);
+}
+
+@mixin type-scale($scale, $map) {
+  @include type-scale-at-breakpoint($scale, $map, xs);
+
+  @each $key, $value in $breakpoints {
+    @if map-has-key(map-fetch($map, $scale), $key) {
+      @include respond-to($key) {
+        @include type-scale-at-breakpoint($scale, $map, $key);
+      }
+    }
+  }
+}
+
+@mixin type-scale-at-breakpoint($scale, $map, $breakpoint) {
+  font-size: rem(map-fetch($map, $scale $breakpoint font-size));
+  line-height: em(map-fetch($map, $scale $breakpoint line-height), map-fetch($map, $scale $breakpoint font-size));
+}
+
+
+@mixin sans-serif-normal {
+  font-family: $font-sans-serif;
+  font-weight: $font-weight-normal;
+  font-style: $font-style-normal;
+}
+
+@mixin sans-serif-normal-oblique {
+  font-family: $font-sans-serif;
+  font-weight: $font-weight-normal;
+  font-style: $font-style-oblique;
+}
+
+@mixin sans-serif-bold {
+  font-family: $font-sans-serif;
+  font-weight: $font-weight-bold;
+  font-style: $font-style-normal;
+}
+
+@mixin sans-serif-bold-oblique {
+  font-family: $font-sans-serif;
+  font-weight: $font-weight-bold;
+  font-style: $font-style-oblique;
+}

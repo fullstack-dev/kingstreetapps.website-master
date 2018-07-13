@@ -1,0 +1,36 @@
+.nav {
+  $c: &;
+  padding: rem(30) 0;
+
+  &__inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__logo {
+    display: block;
+    flex: none;
+
+    a,
+    svg {
+      display: block;
+      font-size: rem(32);
+      color: $black;
+    }
+  }
+
+  &__menu-wrapper {
+    display: block;
+    flex-shrink: 0;
+  }
+
+  &--inverted {
+    #{$c}__logo {
+      a,
+      svg {
+        color: $white;
+      }
+    }
+  }
+}

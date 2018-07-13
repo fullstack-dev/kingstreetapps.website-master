@@ -1,0 +1,68 @@
+.team-member {
+  border: 1px solid $light-gray;
+  padding: rem(40) rem(30) rem(37);
+  background: $white;
+
+  &__photo {
+    display: block;
+    width: rem(134);
+    height: rem(134);
+    border-radius: 100%;
+    margin-bottom: rem(35);
+  }
+
+  &__name-label {
+    display: block;
+    @extend %body-type-xsmall;
+  }
+
+  &__name {
+    display: block;
+    color: $heading-colour;
+    font-weight: $font-weight-bold;
+  }
+
+  &__description {
+    margin-top: rem(16);
+  }
+
+  &__inline-fields {
+    margin-top: rem(10);
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+  }
+
+  &__inline-field {
+    margin-top: rem(15);
+
+    & > span:first-child {
+      display: block;
+      @extend %body-type-xsmall;
+    }
+
+    & > span:nth-child(2) {
+      display: block;
+      font-weight: $font-weight-bold;
+      line-height: 1.375em;
+      color: $heading-colour;
+    }
+
+    &--role {
+      flex: none;
+      width: rem(120);
+      margin-right: rem(20);
+    }
+  }
+
+  &__linkedin-link {
+    line-height: em(30, 16);
+    color: $primary-colour;
+
+    img {
+      width: rem(23);
+      height: rem(23);
+      margin-right: rem(10);
+    }
+  }
+}

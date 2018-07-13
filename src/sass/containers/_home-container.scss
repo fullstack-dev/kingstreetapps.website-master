@@ -1,0 +1,98 @@
+.home-header {
+  background-image: url('../assets/images/home-header-bg@2x.jpg');
+
+  &__content {
+    @extend .page-header__content;
+    position: relative;
+    height: 100vh;
+    min-height: rem(600);
+    display: flex;
+    align-items: center;
+
+    @include respond-to-max(lg) {
+      justify-content: center;
+      text-align: center;
+    }
+
+    @include respond-to-max(md) {
+      display: block;
+    }
+
+    &--done-enter {
+      @extend .page-header__content--done-enter;
+    }
+  }
+
+  &__heading {
+    padding-bottom: rem(62);
+
+    @include respond-to-max(md) {
+      padding-top: rem(150);
+    }
+  }
+
+  &__bottom {
+    position: absolute;
+    bottom: rem(52);
+    left: 0;
+    right: 0;
+  }
+
+  &__location-info-group {
+    display: inline-block;
+    width: rem(390);
+    margin-top: rem(15);
+    margin-right: rem(20);
+
+    &:last-child {
+      margin-right: 0;
+    }
+
+    @include respond-to-max(lg) {
+      display: block;
+      text-align: left;
+      max-width: 100%;
+      margin-left: auto !important;
+      margin-right: auto !important;
+    }
+  }
+}
+
+.home-page-content {
+  @extend .page-content;
+  padding-bottom: rem(100);
+
+  @include respond-to(lg) {
+    padding-bottom: rem(142);
+  }
+
+  &--done-enter {
+    @extend .page-content--done-enter;
+  }
+}
+
+.home-section-projects {
+  padding: rem(69) 0;
+
+  @include respond-to(lg) {
+    padding-bottom: rem(115);
+  }
+}
+
+.home-section-strategy {
+  &__content {
+    width: rem(795);
+    max-width: 100%;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  &__copy {
+    color: $black;
+    margin-bottom: rem(43);
+
+    @include respond-to(md) {
+      @include heading-type-scale(h1);
+    }
+  }
+}

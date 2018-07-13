@@ -1,0 +1,45 @@
+$overlay-transition-duration: .35s;
+$overlay-transition-background-color: $alabaster;
+
+.overlay-transition {
+  transition: opacity $overlay-transition-duration linear;
+
+  &, &--enter, &--active-enter {
+    opacity: 0;
+  }
+
+  &--appear, &--active-appear, &--exit, &--active-exit, &--done-enter {
+    opacity: 1;
+  }
+
+  &--exit, &--active-exit {
+    position: absolute;
+    top: 0;
+    width: 100%;
+  }
+
+  &__wrapper {
+    position: relative;
+  }
+
+  &__overlay {
+    transition: top $overlay-transition-duration ease-out;
+    position: fixed;
+    width: 100%;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: $overlay-transition-background-color;
+    top: 100%;
+
+    &--exiting {
+      top: 0;
+    }
+  }
+}
+
+.overlay-transition--exit.overlay-transition--active-exit {
+  .overlay-transition__overlay {
+    @extend .overlay-transition__overlay--exiting;
+  }
+}

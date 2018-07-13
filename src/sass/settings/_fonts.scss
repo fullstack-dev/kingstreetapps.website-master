@@ -1,0 +1,101 @@
+$chivo-font-family: 'Chivo', sans-serif;
+
+$font-sans-serif: $chivo-font-family;
+$font-family-base: $font-sans-serif;
+$font-family-alt: $font-sans-serif;
+$font-weight-normal: 400;
+$font-weight-bold: 700;
+$font-style-normal: normal;
+$font-style-oblique: oblique;
+
+
+// SCALES
+$body-type-scale: (
+  xsmall: (
+    xs: (
+      font-size: 13,
+      line-height: 24
+    )
+  ),
+  small: (
+    xs: (
+      font-size: 16,
+      line-height: 25
+    )
+  ),
+  medium: (
+    xs: (
+      font-size: 20,
+      line-height: 32
+    )
+  ),
+  large: (
+    xs: (
+      font-size: 24,
+      line-height: 42
+    )
+  )
+);
+
+$heading-type-scale: (
+  h1: (
+    xs: (
+      font-size: 40,
+      line-height: 62
+    ),
+    lg: (
+      font-size: 50,
+      line-height: 77
+    )
+  ),
+  h2: (
+    xs: (
+      font-size: 30,
+      line-height: 43
+    ),
+    lg: (
+      font-size: 40,
+      line-height: 62
+    )
+  ),
+  h3: (
+    xs: (
+      font-size: 24,
+      line-height: 37
+    ),
+    lg: (
+      font-size: 30,
+      line-height: 43
+    )
+  ),
+  h4: (
+    xs: (
+      font-size: 20,
+      line-height: 31
+    ),
+    lg: (
+      font-size: 24,
+      line-height: 37
+    )
+  ),
+  h5: (
+    xs: (
+      font-size: 18,
+      line-height: 28
+    ),
+    lg: (
+      font-size: 20,
+      line-height: 31
+    )
+  ),
+  h6: (
+    xs: (
+      font-size: 16,
+      line-height: 25
+    ),
+    lg: (
+      font-size: 18,
+      line-height: 28
+    )
+  )
+);

@@ -1,0 +1,79 @@
+.project {
+  outline: none;
+
+  &__info {
+    display: block;
+    position: relative;
+    padding-left: rem(262);
+    padding-top: rem(3);
+    width: rem(830);
+    max-width: 100%;
+    min-height: rem(150);
+
+    @include respond-to-max(md) {
+      padding: 0;
+      width: 100%;
+    }
+  }
+
+  &__title {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: rem(250);
+
+    @include respond-to-max(md) {
+      position: static;
+      width: initial;
+    }
+  }
+
+  &__introduction {
+    @include respond-to-max(md) {
+      margin-top: rem(20);
+    }
+  }
+
+  &__link {
+    margin-top: rem(33);
+  }
+
+  &__inline-fields {
+    position: absolute;
+    bottom: rem(8);
+    left: 0;
+
+    @include respond-to-max(md) {
+      position: static;
+      margin-top: rem(20);
+    }
+  }
+
+  &__inline-field {
+    display: inline-block;
+    margin-right: rem(40);
+
+    &:last-child {
+      margin-right: 0;
+    }
+
+    span:first-child {
+      display: block;
+      @extend %body-type-xsmall;
+    }
+
+    span:nth-child(2) {
+      display: block;
+      color: $heading-colour;
+    }
+  }
+
+  &__image-wrapper {
+    margin-top: rem(30);
+  }
+
+  &__image {
+    width: 100%;
+    height: auto;
+  }
+}
